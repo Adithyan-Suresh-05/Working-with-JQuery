@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Karunya Architectural Firm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#f2f2f2;color:#333;line-height:1.6}
+.container{width:85%;margin:auto;padding:20px}
+header{background:#1f3c88;color:white;text-align:center;padding:25px;border-radius:12px}
+header p{color:white}
+.nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0}
+.nav a{background:#e9eef9;color:#1f3c88;text-decoration:none;padding:10px 16px;border-radius:20px;font-weight:bold}
+.nav a:hover{background:#1f3c88;color:white}
+section,.card,.faq-item{background:white;padding:20px;border-radius:12px;margin-bottom:22px;box-shadow:0 5px 15px #ddd}
+h2{color:#8b0000}
+p,li,dd{color:#444}
+img{max-width:100%;height:auto;border-radius:10px}
+.hero,.service-cards{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.hero-copy,.hero-image,.card{flex:1 1 220px}
+.hero-image img,.card img{width:100%}
+.card{text-align:center}
+.card h3{color:#1f3c88}
+button,input[type=submit],input[type=reset]{background:#1f3c88;color:white;border:0;padding:10px 16px;border-radius:7px;cursor:pointer;margin:5px}
+button:hover,input[type=submit]:hover,input[type=reset]:hover{background:#0f234f}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #333;padding:10px;text-align:center}
+th{background:#1f3c88;color:white}
+input,textarea,select{padding:9px;margin:6px 0;border:1px solid #bbb;border-radius:5px;font:inherit}
+input:required{border:2px solid blue;background:lightyellow}
+input:focus{border:2px solid red;background:#e9ffe9;outline:none}
+input[type=email]:invalid{color:red}
+input[type=email]:valid{color:blue}
+.inline-options{display:flex;gap:14px;flex-wrap:wrap}
+.inline-options input{width:auto}
+.rounded-box{padding:20px;background:#dbeeff;border:2px solid #1f3c88;border-radius:15px 50px 30px 5px;margin:15px 0}
+.border-img-box{padding:20px;margin:15px 0;border:25px solid transparent;border-image:url("images/border.png") 30 round}
+.multiple-background{height:220px;background-image:url("images/architect.jpg"),url("images/architecture-texture.jpg");background-position:right bottom,left top;background-repeat:no-repeat,repeat}
+.background-size-box{width:300px;height:150px;background-image:url("images/house.jpg");background-size:100px 80px;background-repeat:no-repeat;border:1px solid #999}
+.project-name{font-size:20px;font-weight:bold;color:#1f3c88;cursor:pointer;margin-bottom:10px}
+.project-image{opacity:.2;transition:.3s;width:300px;margin-left:0}
+.project-name:hover+.project-image{opacity:1}
+#projectTable tr:nth-child(odd){background:#f2f2f2}
+#projectTable tr:nth-child(even){background:#dbeeff}
+#projectTable tr:hover{background:#ffd966}
+.faq-item:hover{transform:translateY(-3px)}
+.footer{text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.box{background:#f8faff;border-left:4px solid #1f3c88;padding:15px;border-radius:8px;margin-bottom:15px}
+.box h3{color:#1f3c88}
+.box input:not([type=radio]),.box select{width:100%}
+.box input[type=radio]{width:auto}
+.result{background:#e9eef9;padding:10px;margin-top:10px;border-radius:5px;overflow-wrap:anywhere}
+.garden{display:grid;gap:8px;margin-top:12px}
+.garden img{width:100px;height:100px;object-fit:cover}
+.event-box{background:#dbeeff;padding:20px;border:1px solid #1f3c88;border-radius:8px}
+.tip-options{display:flex;gap:15px;flex-wrap:wrap}
+.tip-options input{width:auto}
+#experiment6 #clock{text-align:center;color:#1f3c88;font-size:35px}
+#moveArea{position:relative;height:170px;background:#e9eef9;border:1px solid #1f3c88;border-radius:8px;overflow:hidden}
+#movingProject{position:absolute;left:0;top:15px;width:130px;height:130px;object-fit:cover}
+@media(max-width:768px){
+.container{width:95%}
+.nav{flex-direction:column}
+.nav a{text-align:center}
+.hero,.service-cards{flex-direction:column}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Karunya Architectural Firm</h1>
+<p>Designing Modern Homes, Offices and Commercial Buildings</p>
+</header>
+
+<nav class="nav">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#advanced">Advanced CSS3</a>
+<a href="#projects">Projects</a>
+<a href="#consultation">Consultation</a>
+<a href="#experiment5">Experiment 05</a>
+<a href="#experiment6">Experiment 06</a>
+<a href="#experiment7">Experiment 07</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+<h2>About Us</h2>
+<div class="hero">
+<div class="hero-copy">
+<p>Karunya Architectural Firm provides innovative architectural designs for residential, commercial and industrial buildings. Our goal is to create beautiful, modern and sustainable spaces for our clients.</p>
+</div>
+<div class="hero-image">
+<img src="images/building.jpg" alt="Modern building">
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+<table>
+<tr><th>Service</th><th>Price</th></tr>
+<tr><td>House Design</td><td>₹50,000</td></tr>
+<tr><td>Office Design</td><td>₹80,000</td></tr>
+<tr><td>Interior Design</td><td>₹30,000</td></tr>
+<tr><td>Landscape Design</td><td>₹20,000</td></tr>
+</table>
+</section>
+
+<section>
+<h2>Featured Services</h2>
+<div class="service-cards">
+<div class="card">
+<img src="images/house.jpg" alt="House">
+<h3>House Design</h3>
+<p>Modern residential planning with elegant architecture.</p>
+<button>Read More</button>
+</div>
+<div class="card">
+<img src="images/office.jpg" alt="Office">
+<h3>Office Design</h3>
+<p>Professional office spaces for businesses.</p>
+<button>Read More</button>
+</div>
+<div class="card">
+<img src="images/interior.jpg" alt="Interior">
+<h3>Interior Design</h3>
+<p>Creative interior solutions for every lifestyle.</p>
+<button>Read More</button>
+</div>
+</div>
+</section>
+
+<section id="advanced">
+<h2>Advanced Architectural Showcase</h2>
+<h3>1. Rounded Corners</h3>
+<div class="rounded-box">
+<h3>Modern Architectural Design</h3>
+<p>We create innovative, sustainable and visually appealing spaces.</p>
+</div>
+<h3>2. Border Image</h3>
+<div class="border-img-box">
+<h3>Featured Architectural Project</h3>
+<p>Our projects combine modern design and functionality.</p>
+</div>
+<h3>3. Multiple Backgrounds</h3>
+<div class="multiple-background"></div>
+<h3>4. Background Size</h3>
+<div class="background-size-box"></div>
+</section>
+
+<section id="consultation">
+<h2>Book a Free Consultation</h2>
+<p>Click inside the fields to observe CSS pseudo-class effects.</p>
+<form>
+<table>
+<tr><td>Client Name</td><td><input type="text" placeholder="Enter name" required></td></tr>
+<tr><td>Email</td><td><input type="email" placeholder="example@gmail.com" required></td></tr>
+<tr><td>Mobile Number</td><td><input type="tel" pattern="[0-9]{10}" placeholder="10-digit number" required></td></tr>
+<tr><td>Project Budget</td><td><input type="number" min="100000" placeholder="Enter budget"></td></tr>
+<tr><td>Start Date</td><td><input type="date"></td></tr>
+<tr><td>Project Type</td><td class="inline-options">
+<label><input type="radio" name="project"> Residential</label>
+<label><input type="radio" name="project"> Commercial</label>
+<label><input type="radio" name="project"> Interior</label>
+</td></tr>
+<tr><td>Architect</td><td>
+<select>
+<option>Choose Architect</option>
+<option>Mr. Adithyan</option>
+<option>Mr. Rohith</option>
+<option>Mr. Lukson Akhi</option>
+<option>Ms. Meera</option>
+</select>
+</td></tr>
+<tr><td>Project Address</td><td><textarea rows="3" placeholder="Enter location"></textarea></td></tr>
+<tr><td colspan="2"><input type="submit" value="Book Consultation"><input type="reset" value="Clear Form"></td></tr>
+</table>
+</form>
+</section>
+
+<section id="projects">
+<h2>Architectural Project Gallery</h2>
+<h3>5. Adjacent Sibling Selector</h3>
+<p>Hover over the project name to reveal the image.</p>
+<div class="project-name">Modern Luxury Villa</div>
+<img class="project-image" src="images/house.jpg" alt="Modern villa">
+<h3>6. Project Table using nth-child</h3>
+<table id="projectTable">
+<tr><td>Modern Villa</td><td>Coimbatore</td></tr>
+<tr><td>Corporate Office</td><td>Chennai</td></tr>
+<tr><td>Luxury Residence</td><td>Kochi</td></tr>
+<tr><td>Hill Resort</td><td>Ooty</td></tr>
+</table>
+</section>
+
+<section id="experiment5">
+<h2>Experiment 05 – JavaScript DOM Elements and Events</h2>
+
+<div class="box">
+<h3>1. DOM Element Selection</h3>
+<p id="intro" class="intro">Welcome to Karunya Architectural Firm. We design modern spaces.</p>
+<button id="domIdBtn">Get Element By ID</button>
+<button id="domTagBtn">Get Elements By Tag Name</button>
+<button id="domClassBtn">Get Elements By Class Name</button>
+<button id="domSelectorBtn">Query Selector All</button>
+<button id="domChangeBtn">Change Introduction</button>
+<div id="domResult" class="result">Result appears here.</div>
+</div>
+
+<div class="grid">
+<div class="box">
+<h3>2. Project Description Analyzer</h3>
+<p>Find the shortest and longest words in a project description.</p>
+<input id="wordInput" placeholder="Enter project description">
+<button id="wordBtn">Find Words</button>
+<div id="wordResult" class="result"></div>
+</div>
+
+<div class="box">
+<h3>3. Construction Budget Calculator</h3>
+<label>Building Area (square feet)</label>
+<input type="number" id="area" placeholder="Enter area">
+<label>Cost per Square Foot (₹)</label>
+<input type="number" id="rate" placeholder="Enter rate">
+<button id="budgetBtn">Calculate Budget</button>
+<div id="budgetResult" class="result"></div>
+</div>
+
+<div class="box">
+<h3>4. Architectural Project Grid</h3>
+<label>Rows</label>
+<input type="number" id="rows" placeholder="Enter rows">
+<label>Columns</label>
+<input type="number" id="columns" placeholder="Enter columns">
+<button id="plantGardenBtn">Generate Gallery</button>
+<div id="garden" class="garden"></div>
+<div id="gardenResult" class="result"></div>
+</div>
+
+<div class="box">
+<h3>5. Project Currency Converter</h3>
+<input type="number" id="data" placeholder="Enter amount">
+<label>From</label>
+<select id="from">
+<option value="INR">Indian Rupee</option>
+<option value="USD">US Dollar</option>
+</select>
+<label>To</label>
+<select id="to">
+<option value="USD">US Dollar</option>
+<option value="INR">Indian Rupee</option>
+</select>
+<button id="convertBtn">Convert</button>
+<div id="answer" class="result"></div>
+</div>
+
+<div class="box">
+<h3>6. Architectural Design Selector</h3>
+<p>Randomly select a modern or traditional design.</p>
+<img id="coin" src="images/house.jpg" alt="Selected design" style="width:180px;height:130px;object-fit:cover">
+<button id="flip">Select Design</button>
+<p>Modern Design: <span id="num_heads">0</span></p>
+<p>Traditional Design: <span id="num_tails">0</span></p>
+<div id="designResult" class="result"></div>
+</div>
+
+<div class="box">
+<h3>7. Architectural Service Cost Calculator</h3>
+<label>Basic Package (₹5,000)</label>
+<input type="number" id="small" value="0" min="0">
+<label>Standard Package (₹10,000)</label>
+<input type="number" id="medium" value="0" min="0">
+<label>Premium Package (₹20,000)</label>
+<input type="number" id="large" value="0" min="0">
+<p>Additional service charge:</p>
+<div class="tip-options">
+<label><input type="radio" name="tip" value="10">10%</label>
+<label><input type="radio" name="tip" value="15" checked>15%</label>
+<label><input type="radio" name="tip" value="20">20%</label>
+</div>
+<button id="submit">Calculate Cost</button>
+<div id="price" class="result"></div>
+</div>
+</div>
+
+<div class="box">
+<h3>8. JavaScript Events</h3>
+<button id="clickEventBtn">Click Event</button>
+<button id="doubleClickEventBtn">Double Click Event</button>
+<div id="mouseEventBox" class="event-box">Move your mouse over this box.</div>
+<input id="keyEventInput" placeholder="Type something here">
+<div id="eventResult" class="result">Event result appears here.</div>
+</div>
+</section>
+
+<section id="experiment6">
+<h2>Experiment 06 – JavaScript Timer Functions and Arrays</h2>
+
+<div class="box">
+<h3>1. Digital Clock using setInterval()</h3>
+<h2 id="clock">00:00:00</h2>
+<p id="date"></p>
+</div>
+
+<div class="box">
+<h3>2. Dynamic Background using setInterval()</h3>
+<p>Background colour changes every 30 seconds.</p>
+<button onclick="startColor()">Start</button>
+<button onclick="stopColor()">Stop</button>
+</div>
+
+<div class="box">
+<h3>3. Welcome Message using setTimeout()</h3>
+<button onclick="welcome()">Show Welcome</button>
+<p id="welcome"></p>
+</div>
+
+<div class="box">
+<h3>4. Change Font Size using Mouse Events</h3>
+<p id="fontPara" onmouseover="incSize()" onmouseout="decSize()">
+Move your mouse over this paragraph to increase its font size and move it away to decrease the size.
+</p>
+</div>
+
+<div class="box">
+<h3>5. Moving Architectural Project Image</h3>
+<p>Click Move to move the project image and Stop to stop it.</p>
+<div id="moveArea">
+<img id="movingProject" src="images/house.jpg" alt="Architectural project">
+</div>
+<button onclick="moveProject()">Move</button>
+<button onclick="stopProject()">Stop</button>
+</div>
+
+<div class="box">
+<h3>6. Architectural Project Class and Object</h3>
+<button onclick="showProject()">Display Project</button>
+<div id="projectResult" class="result"></div>
+</div>
+
+<div class="box">
+<h3>7. Architect Details using Array of Objects</h3>
+<button onclick="showArchitects()">Display Architects</button>
+<div id="architectResult" class="result"></div>
+</div>
+</section>
+
+<!-- EXPERIMENT 07 -->
+<section id="experiment7">
+<h2>Experiment 07 – Working with jQuery</h2>
+<div class="box">
+<h3>Architectural Budget Calculator</h3>
+<p>Enter the total project budget and divide it by percentage.</p>
+
+<label>Total Budget (₹)</label>
+<input type="number" id="totalBudget" value="150000">
+
+<label>Design and Planning (%)</label>
+<input type="number" id="designPercent" value="50">
+
+<label>Materials (%)</label>
+<input type="number" id="materialPercent" value="20">
+
+<label>Emergency (%)</label>
+<input type="number" id="emergencyPercent" value="20">
+
+<label>Savings (%)</label>
+<input type="number" id="savingPercent" value="10">
+
+<button id="budgetCalculate">Evaluate Budget</button>
+<div id="jqueryResult" class="result" style="display:none"></div>
+</div>
+</section>
+
+<section>
+<h2>Architectural Terms</h2>
+<dl>
+<dt><b>Blueprint</b></dt>
+<dd>A technical drawing used for building construction.</dd>
+<dt><b>Elevation</b></dt>
+<dd>The front or side view of a building.</dd>
+<dt><b>Floor Plan</b></dt>
+<dd>A drawing showing the arrangement of rooms.</dd>
+</dl>
+</section>
+
+<section id="faq">
+<h2>Client Support Center</h2>
+<div class="faq-item">
+<h3>How long does a project take?</h3>
+<p>Most residential projects take 2 to 4 weeks for planning and design.</p>
+</div>
+<div class="faq-item">
+<h3>Can I customize my design?</h3>
+<p>Yes. Every project is designed according to your requirements.</p>
+</div>
+<div class="faq-item">
+<h3>Is consultation free?</h3>
+<p>Yes, the first consultation is free.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Karunya Architectural Firm<br>
+Coimbatore, Tamil Nadu<br>
+Phone: +91 9876543210<br>
+Email: info@karunya.com</p>
+</section>
+
+<div class="footer">© 2026 Karunya Architectural Firm</div>
+</div>
+
+<script>
+
+// EXPERIMENT 05
+
+document.getElementById("domIdBtn").onclick=function(){
+document.getElementById("domResult").innerHTML=document.getElementById("intro").innerHTML;
+};
+
+document.getElementById("domTagBtn").onclick=function(){
+document.getElementById("domResult").innerHTML="Paragraph count: "+document.getElementsByTagName("p").length;
+};
+
+document.getElementById("domClassBtn").onclick=function(){
+document.getElementById("domResult").innerHTML="Intro class count: "+document.getElementsByClassName("intro").length;
+};
+
+document.getElementById("domSelectorBtn").onclick=function(){
+document.getElementById("domResult").innerHTML="Selected elements: "+document.querySelectorAll("p.intro").length;
+};
+
+document.getElementById("domChangeBtn").onclick=function(){
+document.getElementById("intro").innerHTML="We create modern and sustainable architectural spaces.";
+};
+
+document.getElementById("wordBtn").onclick=function(){
+var str=document.getElementById("wordInput").value.trim();
+if(str===""){
+document.getElementById("wordResult").innerHTML="Enter a description.";
+return;
+}
+var words=str.split(/\s+/),shortest=words[0],longest=words[0];
+for(var i=1;i<words.length;i++){
+if(words[i].length<shortest.length)shortest=words[i];
+if(words[i].length>longest.length)longest=words[i];
+}
+document.getElementById("wordResult").innerHTML="Shortest: "+shortest+"<br>Longest: "+longest;
+};
+
+document.getElementById("budgetBtn").onclick=function(){
+var area=parseFloat(document.getElementById("area").value);
+var rate=parseFloat(document.getElementById("rate").value);
+if(isNaN(area)||isNaN(rate)||area<=0||rate<=0){
+document.getElementById("budgetResult").innerHTML="Enter valid values.";
+return;
+}
+document.getElementById("budgetResult").innerHTML="Estimated Cost: ₹"+(area*rate).toLocaleString("en-IN");
+};
+
+document.getElementById("plantGardenBtn").onclick=function(){
+var rows=parseInt(document.getElementById("rows").value);
+var cols=parseInt(document.getElementById("columns").value);
+var garden=document.getElementById("garden");
+garden.innerHTML="";
+if(isNaN(rows)||isNaN(cols)||rows<1||cols<1||rows>10||cols>10){
+document.getElementById("gardenResult").innerHTML="Enter rows and columns between 1 and 10.";
+return;
+}
+garden.style.gridTemplateColumns="repeat("+cols+",100px)";
+var projects=["images/house.jpg","images/office.jpg"];
+for(var i=0;i<rows*cols;i++){
+var n=Math.floor(Math.random()*projects.length);
+var img=document.createElement("img");
+img.src=projects[n];
+garden.appendChild(img);
+}
+document.getElementById("gardenResult").innerHTML="Gallery created: "+rows+" rows and "+cols+" columns.";
+};
+
+document.getElementById("convertBtn").onclick=function(){
+var amount=parseFloat(document.getElementById("data").value);
+var from=document.getElementById("from").value;
+var to=document.getElementById("to").value;
+if(isNaN(amount)||amount<0){
+document.getElementById("answer").innerHTML="Enter a valid amount.";
+return;
+}
+var result=amount;
+if(from!==to){
+if(from==="INR")result=amount*0.015;
+else result=amount*67.12;
+}
+document.getElementById("answer").innerHTML=result.toFixed(2)+" "+to;
+};
+
+var modern=0,traditional=0;
+document.getElementById("flip").onclick=function(){
+var n=Math.floor(Math.random()*2);
+if(n===0){
+document.getElementById("coin").src="images/house.jpg";
+modern++;
+document.getElementById("designResult").innerHTML="Modern Architecture Selected";
+}else{
+document.getElementById("coin").src="images/interior.jpg";
+traditional++;
+document.getElementById("designResult").innerHTML="Traditional Architecture Selected";
+}
+document.getElementById("num_heads").innerHTML=modern;
+document.getElementById("num_tails").innerHTML=traditional;
+};
+
+document.getElementById("submit").onclick=function(){
+var small=parseInt(document.getElementById("small").value)||0;
+var medium=parseInt(document.getElementById("medium").value)||0;
+var large=parseInt(document.getElementById("large").value)||0;
+if(small<0||medium<0||large<0){
+document.getElementById("price").innerHTML="Enter valid quantities.";
+return;
+}
+var total=small*5000+medium*10000+large*20000;
+var percentage=parseInt(document.querySelector('input[name="tip"]:checked').value);
+var extra=total*percentage/100;
+document.getElementById("price").innerHTML="Base Cost: ₹"+total.toLocaleString("en-IN")+"<br>Additional Charge: ₹"+extra.toLocaleString("en-IN")+"<br>Total: ₹"+(total+extra).toLocaleString("en-IN");
+};
+
+document.getElementById("clickEventBtn").onclick=function(){
+document.getElementById("eventResult").innerHTML="Click event triggered.";
+};
+
+document.getElementById("doubleClickEventBtn").ondblclick=function(){
+document.getElementById("eventResult").innerHTML="Double-click event triggered.";
+};
+
+var mouseBox=document.getElementById("mouseEventBox");
+mouseBox.onmouseover=function(){
+mouseBox.style.background="#c5e2ff";
+document.getElementById("eventResult").innerHTML="Mouseover event triggered.";
+};
+mouseBox.onmouseout=function(){
+mouseBox.style.background="#dbeeff";
+document.getElementById("eventResult").innerHTML="Mouseout event triggered.";
+};
+
+document.getElementById("keyEventInput").onkeyup=function(event){
+document.getElementById("eventResult").innerHTML="Key released: "+event.key;
+};
+
+document.getElementById("from").onchange=function(){
+document.getElementById("eventResult").innerHTML="Currency changed to: "+this.value;
+};
+
+
+// EXPERIMENT 06
+
+function displayClock(){
+var d=new Date();
+var h=String(d.getHours()).padStart(2,"0");
+var m=String(d.getMinutes()).padStart(2,"0");
+var s=String(d.getSeconds()).padStart(2,"0");
+document.getElementById("clock").innerHTML=h+":"+m+":"+s;
+document.getElementById("date").innerHTML="Date: "+d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
+}
+setInterval(displayClock,1000);
+displayClock();
+
+var timer;
+function startColor(){
+if(timer)return;
+timer=setInterval(function(){
+var r=Math.floor(Math.random()*256);
+var g=Math.floor(Math.random()*256);
+var b=Math.floor(Math.random()*256);
+document.body.style.background="rgb("+r+","+g+","+b+")";
+},30000);
+}
+function stopColor(){
+clearInterval(timer);
+timer=null;
+document.body.style.background="#f2f2f2";
+}
+
+function welcome(){
+document.getElementById("welcome").innerHTML="Please wait...";
+setTimeout(function(){
+document.getElementById("welcome").innerHTML="Welcome to Karunya Architectural Firm!";
+},2000);
+}
+
+function incSize(){
+document.getElementById("fontPara").style.fontSize="28px";
+}
+function decSize(){
+document.getElementById("fontPara").style.fontSize="16px";
+}
+
+var moveTimer;
+var imgObj=document.getElementById("movingProject");
+function moveProject(){
+if(moveTimer)return;
+moveTimer=setInterval(function(){
+var area=document.getElementById("moveArea");
+var max=area.clientWidth-imgObj.offsetWidth;
+var left=parseInt(imgObj.style.left)||0;
+if(left>=max){
+clearInterval(moveTimer);
+moveTimer=null;
+return;
+}
+imgObj.style.left=(left+2)+"px";
+},20);
+}
+function stopProject(){
+clearInterval(moveTimer);
+moveTimer=null;
+}
+
+class Project{
+constructor(name,location){
+this.name=name;
+this.location=location;
+}
+present(){
+return this.name+" is located in "+this.location;
+}
+}
+function showProject(){
+var p=new Project("Modern Villa","Coimbatore");
+document.getElementById("projectResult").innerHTML=p.present();
+}
+
+function showArchitects(){
+var architects=[
+{name:"Adithyan",regno:"URK24CS1223",year:1999},
+{name:"Rohith",regno:"AR102",year:2002},
+{name:"Meera",regno:"AR103",year:1998}
+];
+var output="";
+for(var i=0;i<architects.length;i++){
+var a=architects[i];
+output+=a.name+"'s Register Number is "+a.regno+". ";
+if(a.year<2000)
+output+="Born before 2000";
+else
+output+="Born after 2000";
+output+="<br>";
+}
+document.getElementById("architectResult").innerHTML=output;
+}
+
+
+// EXPERIMENT 07 – JQUERY
+
+$(document).ready(function(){
+$("#budgetCalculate").click(function(){
+
+var amount=Number($("#totalBudget").val());
+var p1=Number($("#designPercent").val());
+var p2=Number($("#materialPercent").val());
+var p3=Number($("#emergencyPercent").val());
+var p4=Number($("#savingPercent").val());
+
+if(amount<=0||p1<0||p2<0||p3<0||p4<0||p1+p2+p3+p4!==100){
+alert("Enter a valid budget and percentages totaling 100%.");
+$("#jqueryResult").hide();
+return;
+}
+
+$("#jqueryResult").html(
+"Design and Planning: ₹"+(amount*p1/100).toFixed(2)+"<br>"+
+"Materials: ₹"+(amount*p2/100).toFixed(2)+"<br>"+
+"Emergency: ₹"+(amount*p3/100).toFixed(2)+"<br>"+
+"Savings: ₹"+(amount*p4/100).toFixed(2)
+).css({"background":"#dbeeff","color":"#1f3c88"}).show();
+
+});
+});
+
+</script>
+</body>
+</html>
